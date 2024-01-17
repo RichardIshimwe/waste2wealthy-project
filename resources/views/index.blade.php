@@ -128,7 +128,7 @@
           <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
              <div class="inner-services">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                   <div class="serv"> <span class="icon-service"><img src="images/service-icon1.png" alt="#" /></span>
+                   <div class="serv"> 
                       <h4>INSTALLATION</h4>
                       <p>Reach out for you want to install this electricity.</p>
                    </div>
