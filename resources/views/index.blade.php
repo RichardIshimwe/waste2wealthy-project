@@ -83,17 +83,17 @@
                   <a href="photos/house.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
                   <img src="photos/house.jpg" alt="" class="img-responsive">
                </div>
-               <h3>Individuals(households)</h3>
+               <h3 style="background:#2A1F3F;">Individuals(households)</h3>
             </div>
             <!-- end service -->
          </div>
          <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="service-widget">
                <div class="post-media wow fadeIn">
-                  <a href="photos/go  kabisa.jpeg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                  <img src="photos/go  kabisa.jpeg" alt="" class="img-responsive">
+                  <a href="photos/kabisa.jpeg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                  <img src="photos/kabisa.jpeg" alt="" class="img-responsive">
                </div>
-               <h3>Go Kabisa</h3>
+               <h3 style="background:#2A1F3F;">Go Kabisa</h3>
             </div>
             <!-- end service -->
          </div>
@@ -103,7 +103,7 @@
                   <a href="photos/ampersand.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
                   <img src="photos/ampersand.jpg" alt="" class="img-responsive">
                </div>
-               <h3>Ampersand</h3>
+               <h3 style="background:#2A1F3F;">Ampersand</h3>
             </div>
             <!-- end service -->
          </div>
@@ -113,7 +113,7 @@
                   <a href="photos/university.jpeg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
                   <img src="photos/university.jpeg" alt="" class="img-responsive">
                </div>
-               <h3>Organizations</h3>
+               <h3 style="background:#2A1F3F;">Organizations</h3>
             </div>
             <!-- end service -->
          </div>
@@ -122,7 +122,7 @@
    </div>
    <!-- end container -->
 </div>
-<div id="service" class="services wow fadeIn">
+<div id="service" class="services wow fadeIn" style="background:#2A1F3F;">
     <div class="container">
        <div class="row">
           <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
