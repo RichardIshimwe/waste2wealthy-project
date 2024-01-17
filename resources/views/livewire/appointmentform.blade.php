@@ -1,7 +1,8 @@
+
 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="appointment-form">
 
-       <h3><span>+</span> Book Appointment</h3>
+       <h3> GET IN TOUCH</h3>
        <div class="form">
           <form wire:submit.prevent="store_requested_appointment()">
              <fieldset>
@@ -48,22 +49,6 @@
                            <input type="datetime-local" name="stime" placeholder="Set Time Of Appointment" wire:model.lazy="stime" class="form-control" />
                            @error('stime') <span class="text-red-500 text-danger text-xs">{{ $message }}</span> @enderror
                        </div>
-                   </div>
-                </div>
-
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                   <div class="row">
-                      <div class="form-group">
-                         <select wire:model.lazy="doctor" name="doctor"  class="form-control">
-                          @forelse (\App\Models\doctor::all() as $doctor)
-                            <option value="{{ $doctor->name }}">{{ $doctor->name }}</option>
-                          @empty
-                           <option>No Doctor Found!</option>
-                          @endforelse
-                         </select>
-
-                         @error('doctor') <span class="text-red-500 text-danger text-xs">{{ $message }}</span> @enderror
-                      </div>
                    </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

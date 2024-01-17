@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="service" class="services wow fadeIn">
+
+<!--<div id="service" class="services wow fadeIn">
     <div class="container">
        <div class="row">
            <div class="col">
@@ -87,7 +88,7 @@
                                   <select class="form-control">
                                      <option>Time</option>
                                      <option>AM</option>
-                                     <option>PM</option>
+                                     <option>PM</option>-->
                                  <!-- </select>
                                </div>
                             </div>

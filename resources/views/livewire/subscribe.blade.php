@@ -1,7 +1,7 @@
 <div class="col-md-4">
     <div class="subcriber-info">
         <h3>SUBSCRIBE</h3>
-        <p>Get electicity news, tip and solutions to your problems from our experts.</p>
+        <p>Subscribe to get electicity news, tip and solutions to your problems from our company.</p>
         <div class="subcriber-box">
             <form id="mc-form" class="mc-form" wire:submit.prevent="add_subscriber">
                 <div class="newsletter-form">
