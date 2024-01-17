@@ -43,38 +43,6 @@
 
 <body class="clinic_version">
 
-    <!-- LOADER -->
-   <!-- <div id="preloader">
-        <a href="{{ url('/') }}"><img class="preloader" src="{{ config('app.url') }}images/loaders/heart-loading2.gif" alt=""></a>
-    </div>
-     END LOADER -->
-   <!-- <header>
-        <div class="header-top wow fadeIn">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}"><img
-                        src="{{ $app ? config('app.url') . 'storage/' . $app->logo_path :  config("app.url").'images/logo.png' }}"
-                        alt="logo image "></a>
-                <div class="right-header">
-                    <div class="header-info">
-                        <div class="info-inner">
-                            <span class="icontop"><img src="{{ config('app.url') }}images/phone-icon.png" alt="#"></span>
-                            <span class="iconcont"><a
-                                    href="tel:{{ $app ? $app->business_phone : '123 123 123' }}">{{ $app ? $app->business_phone : '123 123 123' }}</a></span>
-                        </div>
-                        <div class="info-inner">
-                            <span class="icontop"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                            <span class="iconcont"><a data-scroll
-                                    href="mailto:{{ $app ? $app->business_email : 'tauseed@test.com' }}">{{ $app ? $app->business_email : 'tauseed@test.com' }}</a></span>
-                        </div>
-                        <div class="info-inner">
-                            <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                            <span class="iconcont"><a data-scroll href="#">Daily:
-                                    {{ $app ? $app->working_horse : '7:00 AM - 8:00 PM' }}</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
         <div class="header-bottom wow fadeIn">
             <div class="container-fluid">
                 <nav class="main-menu">
@@ -89,10 +57,7 @@
                             <li onclick="check_active('Home')"><a id="Home" href="{{ url('/') }}">Home</a></li>
                             
                             <li onclick="check_active('About')"><a id="About" data-scroll
-                                    href="{{ url('/about') }}">About us</a></li><!--<li onclick="check_active('Services')"><a id="Services" data-scroll
-                                    href="{{ url('/services') }}">Services</a></li>
-                            <li onclick="check_active('Doctors')"><a id="Doctors" data-scroll
-                                    href="{{ url('docters') }}">Doctors</a></li>-->
+                                    href="{{ url('/about') }}">About us</a></li>
                             <li onclick="check_active('Contact')"><a id="Contact" data-scroll
                                     href="{{ url('contact') }}">Contact</a></li>
                             @auth
@@ -113,16 +78,6 @@
     </main>
     <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
     <footer id="footer" class="footer-area wow fadeIn">
-        <!--<div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="logo padding">
-                        <a href="{{ url('/') }}"><img src="{{ ($app) ? 'storage/'.$app->logo_path :  config("app.url").'images/logo.png' }}"
-                                alt=""></a>
-                        <p>{{ $app ? $app->description : 'We provide an affordble electricity whenever , however and wherever needed .' }}
-                        </p>
-                    </div>
-                </div>-->
                 <div class="col-md-4">
                     <div class="footer-info padding">
                         <h3>CONTACT US</h3>
@@ -163,12 +118,8 @@
             </div>
         </div>
     </div>
-    <!-- end copyrights -->
-
-    <!-- all js files -->
     {{-- <script src="js/all.js"></script> --}}
     <script src="{{ asset('js/all-in-one.js') }}"></script>
-    <!-- all plugins -->
     <script src="{{ asset('js/custom.js') }}"></script>
     <script>
         function check_active(d) {
