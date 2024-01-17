@@ -47,7 +47,7 @@
    <!-- <div id="preloader">
         <a href="{{ url('/') }}"><img class="preloader" src="{{ config('app.url') }}images/loaders/heart-loading2.gif" alt=""></a>
     </div>
-    <!-- END LOADER -->
+     END LOADER -->
    <!-- <header>
         <div class="header-top wow fadeIn">
             <div class="container">
