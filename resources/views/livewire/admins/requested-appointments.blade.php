@@ -24,24 +24,24 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Phone</th>
-                                <th>Doctor</th>
+                                <th>Location</th>
+                                <th>Company stage</th>
                                 <th>Address</th>
-                                <th>Message</th>
-                                <th>Scheduled Time</th>
+                                <th>electricity per month</th>
+                                <th>Photo</th>
+                                <th>Dated</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ($all_requested_appointment as $request)
                                 <tr>
-                                    <td>{{ $request->name }}</td>
-                                    <td>{{ $request->email }}</td>
-                                    <td>{{ $request->phone }}</td>
-                                    <td>{{ $request->doctor }}</td>
-                                    <td>{{ $request->address }}</td>
-                                    <td>{{ $request->message }}</td>
-                                    <td>{{ $request->stime }}</td>
+                                    <td>{{ $company->name }}</td>
+                                    <td>{{ $company->email }}</td>
+                                    <td>{{ $company->Location ? : 'Null' }}</td>
+                                    <td>{{ $company->photo ? : 'Null' }}</td>
+                                    <td>{{ $company->address ? : 'Null' }}</td>
+                                    <td>{{ $company->companyStage ? : 'Null' }}</td>
                                     <td class="text-right">
 
                                         <button wire:click="add_patient({{ $request->id }})" title="add as a patient" class="btn btn-outline-info btn-rounded"><i class="fas fa-plus"></i></button>
