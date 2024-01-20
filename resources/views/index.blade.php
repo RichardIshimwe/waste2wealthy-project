@@ -34,7 +34,7 @@
             <div class="service-time middle" style="background:#2A1F3F;">
                <span class="info-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
                <h3>We are open 24/7</h3>
-               <p>You are free to buy electricity anytine and anywhere</p>
+               <p>You are free to buy electricity anytine and anywhere.</p>
             </div>
          </div>
       </div>
