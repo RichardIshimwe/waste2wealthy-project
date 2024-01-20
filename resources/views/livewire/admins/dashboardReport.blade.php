@@ -2,7 +2,7 @@
     <div class="content">
         <div class="container">
             <div class="page-title">
-                <h3 class="text-info">{{ env('APP_NAME') }} Birth Reports</h3>
+                <h3 class="text-info">{{ env('APP_NAME') }} Operation Reports</h3>
             </div>
             <div>
                 @if (session()->has('message'))
@@ -17,77 +17,87 @@
             <div class="box box-primary">
                 <div class="box-body">
                     <div class="text-info" wire:loading>Loading..</div>
-                    <form accept-charset="utf-8" class="shadow rounded p-3" wire:submit.prevent="add_birthreport()">
+                    <form accept-charset="utf-8" class="shadow rounded p-3" wire:submit.prevent="add_operationreport()">
                         <div class="text-capitalize bg-dark p-2 shadow mb-3 text-center text-lg text-light rounded">
-                            {{ __('Add New BirthReport') }}</div>
+                            {{ __('Add New operationReport') }}</div>
 
 
                         <div class="form-group">
-                            <label for="patient">Patient</label>
-                            <select name="patient" wire:model.lazy="patient" class="form-control" required>
-                                <option value="" selected>Choose Patient</option>
-                                @forelse ($patients as $patient)
-                                    <option value="{{ $patient->name }}">{{ $patient->name }}</option>
+                            <label for="Customer">Customer</label>
+                            <select name="Customer" wire:model.lazy="Customer" class="form-control" required>
+                                <option value="" selected>Choose Customer</option>
+                                @forelse ($Customers as $Customer)
+                                    <option value="{{ $Customer->name }}">{{ $Customer->name }}</option>
                                 @empty
-                                    <option value="" class="text-warning">No Patient Found!</option>
+                                    <option value="" class="text-warning">No Customer Found!</option>
                                 @endforelse
 
                             </select>
-                            @error('patient') <span class="text-red-500 text-danger text-xs">{{ $message }}</span>
+                            @error('Customer') <span class="text-red-500 text-danger text-xs">{{ $message }}</span>
                             @enderror
                         </div>
 
                         <div class="form-group">
                             <label for="Details">Details</label>
                             <textarea name="Details" id="Details" wire:model.lazy="details"
-                                placeholder="Enter Birth Details" class="form-control" required cols="30"
+                                placeholder="Enter operation Details" class="form-control" required cols="30"
                                 rows="5"></textarea>
                         </div>
                         @error('details') <span class="text-red-500 text-danger text-xs">{{ $message }}</span>
                         @enderror
 
                         <div class="form-group">
-                            <label for="Docter">Docter</label>
-                            <select name="Docter" class="form-control" wire:model.lazy="doctor" required>
-                                <option value="" selected>Choose Doctor</option>
-                                @forelse ($doctors as $doctor)
-                                    <option value="{{ $doctor->name }}">{{ $doctor->name }}</option>
+                            <label for="Station">Station</label>
+                            <select name="Station" class="form-control" wire:model.lazy="Station">
+                                <option>Choose Station</option>
+                                @forelse ($Stations as $Station)
+                                    <option value="{{ $Station->name }}">{{ $Station->name }}</option>
                                 @empty
-                                    <option value="" class="text-warning">No Doctor Found!</option>
+                                    <option value="" class="text-warning">No Station Found!</option>
                                 @endforelse
                             </select>
-                            @error('doctor') <span class="text-red-500 text-danger text-xs">{{ $message }}</span>
+                            @error('Station') <span class="text-red-500 text-danger text-xs">{{ $message }}</span>
                             @enderror
                         </div>
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <input type="time" name="time" id="time" wire:model.lazy="time"
+                                placeholder="Enter operation time" class="form-control" required />
+                        </div>
+                        @error('time') <span class="text-red-500 text-danger text-xs">{{ $message }}</span>
+                        @enderror
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="{{ $button_text }}">
                         </div>
                     </form><br>
                     <hr>
                     <div class="text-capitalize bg-dark p-2 shadow mb-3 text-center text-lg text-light rounded">
-                        {{ _('All  BirthReports') }}</div>
-                    <table width="100%" class="table table-hover" id="">
+                        {{ _('All  operationReports') }}</div>
+                    <table class="table table-hover" style="" id="">
                         <thead>
                             <tr>
-                                <th>BirthReport</th>
-                                <th>Patient</th>
-                                <th>Details</th>
-                                <th>Doctor</th>
-                                <th>Dated</th>
-                                <th>Actions</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Details</th>
+                                <th scope="col">Station</th>
+                                <th scope="col">Dated</th>
+                                <th scope="col">Created_at</th>
+                                <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($BirthReports as $BirthReport)
+                            @forelse ($OperationReports as $operationReport)
                                 <tr>
-                                    <td>{{ $BirthReport->id }}</td>
-                                    <td>{{ $BirthReport->patient }}</td>
-                                    <td>{{ $BirthReport->description }}</td>
-                                    <td>{{ $BirthReport->doctor }}</td>
+                                    <td>{{ $operationReport->id }}</td>
+                                    <td>{{ $operationReport->Customer }}</td>
+                                    <td>{{ $operationReport->description }}</td>
+                                    <td>{{ $operationReport->Station }}</td>
+                                    <td>{{ $operationReport->time }}</td>
+                                    <td>{{ $operationReport->created_at }}</td>
                                     <td class="text-right">
-                                        <button wire:click="edit({{ $BirthReport->id }})"
+                                        <button wire:click="edit({{ $operationReport->id }})"
                                             class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></button>
-                                        <button wire:click="delete({{ $BirthReport->id }})"
+                                        <button wire:click="delete({{ $operationReport->id }})"
                                             onclick="return confirm('{{ __('Are You Sure ?') }}')"
                                             class="btn btn-outline-danger btn-rounded"><i
                                                 class="fas fa-trash"></i></button>
@@ -102,8 +112,9 @@
                                 </tr>
                             @endforelse
                         </tbody>
+
                     </table>
-                    {{ $BirthReports->links() }}
+                    {{ $OperationReports->links() }}
                 </div>
             </div>
         </div>

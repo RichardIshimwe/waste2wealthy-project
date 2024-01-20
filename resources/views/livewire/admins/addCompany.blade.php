@@ -2,7 +2,7 @@
     <div class="content">
         <div class="container">
             <div class="page-title">
-                <h3 class="text-info">{{ env('APP_NAME') }}  Patients</h3>
+                <h3 class="text-info">{{ env('APP_NAME') }}  company</h3>
             </div>
             <div  >
                 @if (session()->has('message'))
@@ -17,8 +17,8 @@
             <div class="box box-primary" >
                 <div class="box-body">
                     <div class="text-info" wire:loading>Loading..</div>
-                    <form accept-charset="utf-8" class="shadow rounded p-3" wire:submit.prevent="add_patient()">
-                    <div class="text-capitalize bg-dark p-2 shadow mb-3 text-center text-lg text-light rounded" >{{ __("Add New Patient") }}</div>
+                    <form accept-charset="utf-8" class="shadow rounded p-3" wire:submit.prevent="add_company()">
+                    <div class="text-capitalize bg-dark p-2 shadow mb-3 text-center text-lg text-light rounded" >{{ __("Add New company") }}</div>
                     <div class="form-group">
                         <label for="Name">Name</label>
                         <input type="text" name="Name" wire:model.lazy="name"  placeholder="Enter Name" class="form-control"   />
@@ -54,33 +54,33 @@
                         @error('age') <span class="text-red-500 text-danger text-xs">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="Blood">Blood Group</label>
+                        <label for="Blood">Company stage</label>
                         <select name="Blood" wire:model.lazy="bloodgroup" class="form-control"  >
                          <option value="Null" class="text-red">Null</option>
-                         <option value="A+" class="text-red">A+</option>
-                         <option value="A-" class="text-red">A-</option>
-                         <option value="B+" class="text-red">B+</option>
-                         <option value="B-" class="text-red">B-</option>
-                         <option value="AB-" class="text-red">AB-</option>
-                         <option value="AB+" class="text-red">AB+</option>
+                         <option value="Startup Stage" class="text-red">Startup Stage</option>
+                         <option value="Early Stage" class="text-red">Early Stage</option>
+                         <option value="Growth Stage" class="text-red">Growth Stage</option>
+                         <option value="Expansion Stage" class="text-red">Expansion Stage</option>
+                         <option value="Maturity Stage" class="text-red">Maturity Stage</option>
+                         <option value="Decline Stage" class="text-red">Decline Stage</option>
                         </select>
                         @error('Gender') <span class="text-red-500 text-danger text-xs">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group ">
                         <label class="form-check-label mr-3">
-                            Patient Type
+                            Company Type
                             </label><br>
                         <div class="form-inline">
                             <div class="form-check mx-3">
                                 <input class="form-check-input" wire:model="indoor" type="radio" name="rad" id="rad1" value="indoor">
                                 <label class="form-check-label" for="rad1">
-                                Indoor
+                                NGO
                                 </label>
                             </div>
                             <div class="form-check mx-3">
                                 <input class="form-check-input" wire:model="outdoor" type="radio" name="rad" id="rad2" value="outdoor">
                                 <label class="form-check-label" for="rad2">
-                                    Outdoor
+                                    Profit based company
                                 </label>
                             </div>
                         </div>
@@ -122,35 +122,35 @@
                             <input type="submit" class="btn btn-primary" value="{{ $button_text }}">
                         </div>
                     </form><br><hr>
-                    <div class="text-capitalize bg-dark p-2 shadow mb-3 text-center text-lg text-light rounded" >{{ _("All  patients") }}</div>
+                    <div class="text-capitalize bg-dark p-2 shadow mb-3 text-center text-lg text-light rounded" >{{ _("All  company") }}</div>
                     <table width="100%" class="table table-hover"   id="">
                         <thead>
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Age</th>
-                                <th>Gender</th>
+                                <th>Location</th>
+                                <th>Company stage</th>
                                 <th>Address</th>
-                                <th>BloodGroup</th>
+                                <th>electricity per month</th>
                                 <th>Photo</th>
                                 <th>Dated</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($patients as $patient)
+                            @forelse ($company as $company)
                                 <tr>
-                                    <td>{{ $patient->name }}</td>
-                                    <td>{{ $patient->email }}</td>
-                                    <td>{{ $patient->age ? : 'Null' }}</td>
-                                    <td>{{ $patient->gender ? : 'Null' }}</td>
-                                    <td>{{ $patient->address ? : 'Null' }}</td>
-                                    <td>{{ $patient->bloodgroup ? : 'Null' }}</td>
-                                    <td><img width="100%" height="70px" src="{{(env('APP_URL').'storage/'. $patient->photo_path)  ? : config('app.url').'images/patient.png'  }}" alt="No Image"></td>
-                                    <td>{{ $patient->created_at }}</td>
+                                    <td>{{ $company->name }}</td>
+                                    <td>{{ $company->email }}</td>
+                                    <td>{{ $company->age ? : 'Null' }}</td>
+                                    <td>{{ $company->gender ? : 'Null' }}</td>
+                                    <td>{{ $company->address ? : 'Null' }}</td>
+                                    <td>{{ $company->bloodgroup ? : 'Null' }}</td>
+                                    <td><img width="100%" height="70px" src="{{(env('APP_URL').'storage/'. $company->photo_path)  ? : config('app.url').'images/company.png'  }}" alt="No Image"></td>
+                                    <td>{{ $company->created_at }}</td>
                                     <td class="text-right">
-                                        <button wire:click="edit({{ $patient->id }})" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></button>
-                                        <button wire:click="delete({{ $patient->id }})" onclick="return confirm('{{ __('Are You Sure ?')  }}')" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></button>
+                                        <button wire:click="edit({{ $company->id }})" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></button>
+                                        <button wire:click="delete({{ $company->id }})" onclick="return confirm('{{ __('Are You Sure ?')  }}')" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                             @empty
@@ -167,7 +167,7 @@
                             @endforelse
                             </tbody>
                     </table>
-                    {{ $patients->links() }}
+                    {{ $company->links() }}
                 </div>
      </div>
 </div>

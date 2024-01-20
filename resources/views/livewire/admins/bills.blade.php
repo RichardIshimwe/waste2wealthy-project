@@ -21,16 +21,16 @@
                     <div class="text-capitalize bg-dark p-2 shadow mb-3 text-center text-lg text-light rounded" >{{ __("Add New Bill") }}</div>
 
                     <div class="form-group">
-                        <label for="pat">Patient ID</label>
-                        <select name="pat" wire:model.lazy="patients_id" class="form-control" required>
-                            <option selected>Choose Patient</option>
-                            @forelse ($patients as $patient)
-                                <option value="{{ $patient->id }}">{{ $patient->name }}</option>
+                        <label for="pat">Customer ID</label>
+                        <select name="pat" wire:model.lazy="Customers_id" class="form-control" required>
+                            <option selected>Choose Customer</option>
+                            @forelse ($Customers as $Customer)
+                                <option value="{{ $Customer->id }}">{{ $Customer->name }}</option>
                             @empty
                                 <option value="null">Null</option>
                             @endforelse
                         </select>
-                        @error('patients_id') <span class="text-red-500 text-danger text-xs">{{ $message }}</span> @enderror
+                        @error('Customers_id') <span class="text-red-500 text-danger text-xs">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="form-group">
@@ -55,7 +55,7 @@
                         <thead>
                                 <tr>
                                     <th class="text-center">Bill ID</th>
-                                    <th class="text-center">Patient</th>
+                                    <th class="text-center">Customer</th>
                                     <th class="text-center">Bill Amount <small class="text-warning">KPR</small></th>
                                     <th class="text-center">Payed</th>
                                     <th class="text-center">Actions</th>
@@ -65,7 +65,7 @@
                             @forelse ($bills as $bill)
                                 <tr @if($bill->payed == 1) class="bg-success" @endif>
                                     <td class="text-center">{{ $bill->id }}</td>
-                                    <td class="text-center">{{ $bill->patients_id ? :'Null'}}</td>
+                                    <td class="text-center">{{ $bill->Customers_id ? :'Null'}}</td>
                                     <td class="text-center">{{ $bill->amount ? :'Null'}}</td>
                                     <td class="text-center">{{ $bill->payed ? 'payed':'not payed' }}</td>
                                     <td class="text-center">
