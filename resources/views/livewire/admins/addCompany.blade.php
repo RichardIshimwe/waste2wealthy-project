@@ -55,7 +55,7 @@
                     </div>
                     <div class="form-group">
                         <label for="Blood">Company stage</label>
-                        <select name="Blood" wire:model.lazy="bloodgroup" class="form-control"  >
+                        <select name="Blood" wire:model.lazy="companyStage" class="form-control"  >
                          <option value="Null" class="text-red">Null</option>
                          <option value="Startup Stage" class="text-red">Startup Stage</option>
                          <option value="Early Stage" class="text-red">Early Stage</option>
@@ -142,10 +142,10 @@
                                 <tr>
                                     <td>{{ $company->name }}</td>
                                     <td>{{ $company->email }}</td>
-                                    <td>{{ $company->age ? : 'Null' }}</td>
-                                    <td>{{ $company->gender ? : 'Null' }}</td>
+                                    <td>{{ $company->Location ? : 'Null' }}</td>
+                                    <td>{{ $company->photo ? : 'Null' }}</td>
                                     <td>{{ $company->address ? : 'Null' }}</td>
-                                    <td>{{ $company->bloodgroup ? : 'Null' }}</td>
+                                    <td>{{ $company->companyStage ? : 'Null' }}</td>
                                     <td><img width="100%" height="70px" src="{{(env('APP_URL').'storage/'. $company->photo_path)  ? : config('app.url').'images/company.png'  }}" alt="No Image"></td>
                                     <td>{{ $company->created_at }}</td>
                                     <td class="text-right">
