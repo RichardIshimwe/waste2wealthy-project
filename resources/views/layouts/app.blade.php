@@ -43,7 +43,7 @@
 
 <body class="clinic_version">
 
-        <div class="header-bottom wow fadeIn">
+        <div class="header-bottom wow fadeIn" style="background:#2A1F3F;">
             <div class="container-fluid">
                 <nav class="main-menu">
                     <div class="navbar-header">
@@ -58,7 +58,9 @@
                             
                             <li onclick="check_active('About')"><a id="About" data-scroll
                                     href="{{ url('/about') }}">About us</a></li>
-                            <li onclick="check_active('Contact')"><a id="Contact" data-scroll
+                              <li onclick="check_active('Contact')"><a id="Contact" data-scroll
+                                    href="{{ url('contact') }}">Our Customers</a></li>
+                                    <li onclick="check_active('Contact')"><a id="Contact" data-scroll
                                     href="{{ url('contact') }}">Contact</a></li>
                             @auth
                                 @if (auth()->user()->is_super_admin)
@@ -77,7 +79,7 @@
         @yield('content')
     </main>
     <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
-    <footer id="footer" class="footer-area wow fadeIn">
+    <footer id="footer" class="footer-area wow fadeIn" >
                 <div class="col-md-4">
                     <div class="footer-info padding">
                         <h3>CONTACT US</h3>
@@ -95,7 +97,7 @@
             </div>
         </div>
     </footer>
-    <div class="copyright-area wow fadeIn">
+    <div class="copyright-area wow fadeIn" style="background:#2A1F3F;">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
