@@ -13,7 +13,16 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-
+Route::get('/signup', function () {
+    return view('signup');
+});
+Route::get('/pay', function () {
+    return view('pay');
+});
+Route::get("/log_in",function ()
+{
+    return view('log_in');
+});
 Route::get('/app', function () {
     return view('layouts.app');
 });
@@ -22,7 +31,7 @@ Route::view('/services', 'services');
 
 // waste to wealth protected routes
 
-Route::middleware(['auth','checksuperadmin'])->group(function () {
+ Route::middleware(['auth','checksuperadmin'])->group(function () {
 
     Route::prefix('admin')->group(function () {
 

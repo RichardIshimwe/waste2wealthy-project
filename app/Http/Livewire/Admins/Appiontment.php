@@ -104,9 +104,6 @@ class Appiontment extends Component
     public function render()
     {
         return view('livewire.admins.appiontment',[
-            'patients'=> patient::all(),
-            'nurses'=> nurse::all(),
-            'doctors'=> doctor::all(),
             'appointments'=> appointment::all(),
         ])->layout('admins.layouts.app');
     }

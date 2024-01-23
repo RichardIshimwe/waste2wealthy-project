@@ -8,8 +8,6 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-   <!-- <title>{{ config('app.name', 'Laravel') }}</title>-->
 <title>WASTE TO WEALTH</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -59,9 +57,14 @@
                             <li onclick="check_active('About')"><a id="About" data-scroll
                                     href="{{ url('/about') }}">About us</a></li>
                               <li onclick="check_active('Contact')"><a id="Contact" data-scroll
-                                    href="{{ url('contact') }}">Our Customers</a></li>
+                                    href="{{ url('contact') }}">Market</a></li>
+                                    <li onclick="check_active('pay')"><a id="Contact" data-scroll
+                                    href="{{ url('pay') }}">Pay</a></li>
+
                                     <li onclick="check_active('Contact')"><a id="Contact" data-scroll
                                     href="{{ url('contact') }}">Contact</a></li>
+                                    <li onclick="check_active('log_in')"><a id="Contact" data-scroll
+                                    href="{{ url('log_in') }}">Log in</a></li>
                             @auth
                                 @if (auth()->user()->is_super_admin)
                                     <li onclick="check_active('admin-area')"><a id="admin-area" data-scroll
