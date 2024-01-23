@@ -122,15 +122,4 @@ class Departments extends Component
         $department->delete();
         session()->flash('message', 'Department Deleted Successfully.');
     }
-
-
-    public function render()
-    {
-
-        return view('livewire.admins.departments',[
-            'departments' => department::latest()->paginate(10),
-            'hods' => hod::all(),
-            'blocks' => block::all(),
-        ])->layout('admins.layouts.app');
-    }
 }

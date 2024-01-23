@@ -46,15 +46,15 @@
 
 
                     <div class="form-group">
-                        <label for="Doctor">Select Doctor</label>
-                        <select name="Doctor" wire:model.lazy="doctor" class="form-control" required>
-                            @forelse ($doctors as $doctor)
-                                <option value="{{ $doctor->id }}">{{ $doctor->name }}</option>
+                        <label for="users">Select users</label>
+                        <select name="users" wire:model.lazy="users" class="form-control" required>
+                            @forelse ($users as $users)
+                                <option value="{{ $users->id }}">{{ $users->name }}</option>
                             @empty
-                                <option value="">No Doctor Found!</option>
+                                <option value="">No users Found!</option>
                             @endforelse
                         </select>
-                        @error('doctor') <span class="text-red-500 text-danger text-xs">{{ $message }}</span> @enderror
+                        @error('users') <span class="text-red-500 text-danger text-xs">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="form-group">
@@ -83,7 +83,7 @@
                                     <th>ID</th>
                                     <th>Patient</th>
                                     <th>Prep Nurse</th>
-                                    <th>Doctor</th>
+                                    <th>users</th>
                                     <th>Start Schduled Time</th>
                                     <th>End Time</th>
                                     <th>Actions</th>
@@ -95,7 +95,7 @@
                                     <td>{{ $appointment->id }}</td>
                                     <td>{{ $appointment->patient_id }}</td>
                                     <td>{{ $appointment->nurse_id }}</td>
-                                    <td>{{ $appointment->doctor_id }}</td>
+                                    <td>{{ $appointment->users_id }}</td>
                                     <td>{{ $appointment->intime }}</td>
                                     <td>{{ $appointment->outtime }}</td>
                                     <td>{{ $appointment->created_at }}</td>

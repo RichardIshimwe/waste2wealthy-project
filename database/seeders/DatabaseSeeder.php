@@ -50,21 +50,12 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
+            users::class,
             employeeSeeder::class,
-            patientSeeder::class,
-            blockSeeder::class,
             departmentSeeder::class,
-            HodSeeder::class,
-            doctorSeeder::class,
-            nurseSeeder::class,
-            birthreportSeeder::class,
-            operationreportSeeder::class,
             SubscriberSeeder::class,
             ContactSeeder::class,
-            roomSeeder::class,
-            bedsSeeder::class,
             billSeeder::class,
-            medicineSeeder::class,
             ]);
 
         // \App\Models\User::factory(10)->create();

@@ -37,10 +37,6 @@ Route::view('/services', 'services');
 
         Route::get('settings',App\Http\Livewire\Admins\Settings::class)->name('admin_settings');
         
-        Route::get('/operationsreport',App\Http\Livewire\Admins\Operationreport::class)->name('admin_operations_report');
-        
-        Route::get('/patientBills',App\Http\Livewire\Admins\Bills::class)->name('patient_bills');
-        
         Route::get('/departments',App\Http\Livewire\Admins\Departments::class)->name('departments');
         
         Route::get('/employees',App\Http\Livewire\Admins\Employees::class)->name('employees');
@@ -48,8 +44,6 @@ Route::view('/services', 'services');
         Route::get('/appointment',App\Http\Livewire\Admins\Appiontment::class)->name('appointment');
         
         Route::get('all_user',App\Http\Livewire\Admins\Settings::class)->name('all_users');
-
-        Route::get('/blocks',App\Http\Livewire\Admins\Blocks::class)->name('blocks');
 
         Route::get('/admin/requestedappointments',App\Http\Livewire\Admins\RequestedAppointments::class)->name('requestedAppointment');
 
