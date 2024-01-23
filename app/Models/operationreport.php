@@ -10,7 +10,7 @@ class operationreport extends Model
 {
     use HasFactory,SoftDeletes;
     protected $fillable=[
-        'patient',
+        'user',
         'description',
         'time',
     ];

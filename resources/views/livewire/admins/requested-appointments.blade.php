@@ -44,7 +44,7 @@
                                     <td>{{ $company->companyStage ? : 'Null' }}</td>
                                     <td class="text-right">
 
-                                        <button wire:click="add_patient({{ $request->id }})" title="add as a patient" class="btn btn-outline-info btn-rounded"><i class="fas fa-plus"></i></button>
+                                        <button wire:click="add_user({{ $request->id }})" title="add as a user" class="btn btn-outline-info btn-rounded"><i class="fas fa-plus"></i></button>
 
                                         <button  title="delete request" onclick="return confirm('Are You Sure ?')" wire:click="delete({{ $request->id }})" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></button>
                                     </td>

@@ -14,7 +14,7 @@ class RequestedAppointmentSeeder extends Seeder
     public function run()
     {
         for ($i=0; $i <20 ; $i++) {
-            patient::create([
+            user::create([
                 'name'          => 'tauseed'.$i.' zamana',
                 'email'         => 'example'.$i.'@test.me',
                 'phone'         => '+923'.rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9),

@@ -15,7 +15,7 @@ class billSeeder extends Seeder
     {
         for ($i=0; $i <12 ; $i++) {
             bill::create([
-                'patients_id'          => rand(1,5),
+                'users_id'          => rand(1,5),
                 'amount'          => rand(100,5000),
                 'payed' => rand(0,1)
             ]);
