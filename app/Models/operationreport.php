@@ -12,7 +12,6 @@ class operationreport extends Model
     protected $fillable=[
         'patient',
         'description',
-        'doctor',
         'time',
     ];
 }

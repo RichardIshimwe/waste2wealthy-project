@@ -13,7 +13,6 @@ class requestedAppointment extends Model
         'name',
         'email',
         'phone',
-        'doctor',
         'message',
         'address',
         'stime',

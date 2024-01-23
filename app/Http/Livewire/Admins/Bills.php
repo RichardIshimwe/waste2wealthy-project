@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Admins;
 use App\Models\bill;
-use App\Models\patient;
+use App\Models\user;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -13,7 +13,7 @@ class Bills extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public $patients_id;
+    public $users_id;
     public $amount;
     public $payed;
     public $edit_bill_id;
@@ -28,18 +28,18 @@ class Bills extends Component
         }else{
 
            $this->validate([
-            'patients_id' => 'required',
+            'users_id' => 'required',
             'amount' => 'required|numeric',
             ]);
 
             bill::create([
-                'patients_id'         => $this->patients_id,
+                'users_id'         => $this->users_id,
                 'amount'         => $this->amount,
                 'payed'         => $this->payed,
             ]);
 
            $this->amount=null;
-            $this->patients_id=null;
+            $this->users_id=null;
             $this->payed=null;
 
             session()->flash('message', 'Bill Created successfully.');
@@ -53,7 +53,7 @@ class Bills extends Component
         $bill = bill::findOrFail($id);
         $this->edit_bill_id = $id;
         $this->amount = $bill->amount;
-        $this->patients_id = $bill->patients_id;
+        $this->users_id = $bill->users_id;
         $this->payed = $bill->payed;
 
         $this->button_text="Update Bill";
@@ -63,18 +63,18 @@ class Bills extends Component
     {
         $this->validate([
             'amount' => 'required|numeric',
-            'patients_id' => 'required|numeric',
+            'users_id' => 'required|numeric',
             ]);
 
         $bill = bill::findOrFail($id);
         $bill->amount = $this->amount;
-        $bill->patients_id = $this->patients_id;
+        $bill->users_id = $this->users_id;
         $bill->payed = $this->payed;
 
         $bill->save();
 
         $this->amount=null;
-        $this->patients_id=null;
+        $this->users_id=null;
         $this->payed=null;
 
         $this->edit_bill_id=null;
@@ -91,7 +91,7 @@ class Bills extends Component
         session()->flash('message', 'Bill Deleted Successfully.');
 
         $this->amount=null;
-        $this->patients_id=null;
+        $this->users_id=null;
         $this->payed=null;
         $this->discharge_time=null;
 }
@@ -99,7 +99,7 @@ class Bills extends Component
     {
         return view('livewire.admins.bills',[
             'bills' =>bill::latest()->paginate(10),
-            'patients' =>patient::all()
+            'users' =>user::all()
         ])->layout('admins.layouts.app');
     }
 }

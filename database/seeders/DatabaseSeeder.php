@@ -16,9 +16,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        Storage::disk('public')->put('patient.png', config('app.url').'images/patient.png');
-        Storage::disk('public')->put('doctor.png', config('app.url').'images/doctor.png');
-
         User::create([
             'name' =>'tauseed zaman',
             'email' =>'tauseed@test.com',
@@ -27,28 +24,6 @@ class DatabaseSeeder extends Seeder
             'is_super_admin' =>true,
             'created_at' =>now(),
         ]);
-        // User::create([
-        //     'name' =>'store employeer',
-        //     'email' =>'storeemployeer@test.com',
-        //     'password' =>bcrypt('storeemployeer'),
-        //     'role' =>'store man',
-        //     'created_at' =>now(),
-        // ]);
-        // User::create([
-        //     'name' =>'doctor',
-        //     'email' =>'doctor@test.com',
-        //     'password' =>bcrypt('doctor'),
-        //     'role' =>'doctor',
-        //     'created_at' =>now(),
-        // ]);
-        // User::create([
-        //     'name' =>'zaman',
-        //     'email' =>'zaman@test.com',
-        //     'password' =>bcrypt('zaman'),
-        //     'role' =>'PA',
-        //     'created_at' =>now(),
-        // ]);
-
         $this->call([
             users::class,
             employeeSeeder::class,

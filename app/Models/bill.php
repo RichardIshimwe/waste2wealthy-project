@@ -9,7 +9,7 @@ class bill extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'patients_id',
+        'user_id',
         'amount',
         'payed',
     ];

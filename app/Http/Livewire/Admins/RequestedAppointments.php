@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Admins;
 
 use Livewire\Component;
 use App\Models\requestedAppointment;
-use App\Models\patient;
+use App\Models\user;
 use Livewire\WithPagination;
 
 class RequestedAppointments extends Component
@@ -13,21 +13,21 @@ class RequestedAppointments extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public function add_patient($id)
+    public function add_user($id)
     {
         $request = requestedAppointment::find($id);
-        patient::create([
+        user::create([
                 'name'          => $request->name,
                 'email'         => $request->email,
                 'phone'         => $request->phone,
                 'address'       => $request->address,
         ]);
-        session()->flash('message', 'Patient Added Successfully.');
+        session()->flash('message', 'user Added Successfully.');
     }
 
      public function delete($id)
     {
-        $patient = requestedAppointment::find($id)->delete();
+        $user = requestedAppointment::find($id)->delete();
         session()->flash('message', 'Appointment Deleted Successfully.');
     }
     public function render()
