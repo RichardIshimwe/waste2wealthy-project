@@ -3,17 +3,13 @@
 namespace App\Http\Livewire\Admins;
 
 use App\Models\appointment;
-use App\Models\patient;
-use App\Models\nurse;
-use App\Models\doctor;
+use App\Models\company;
+use App\Models\users;
 use Livewire\Component;
 
 class Appiontment extends Component
 {
 
-    public $patient;
-    public $nurse;
-    public $doctor;
     public $start_timeee;
     public $endtime;
 
@@ -30,21 +26,20 @@ class Appiontment extends Component
 
         }else{
             $this->validate([
-                'patient' => 'required|numeric',
-                'doctor' => 'required|numeric',
-                'nurse' => 'required|numeric',
+                'user' => 'required|numeric',
+                'station' => 'required|numeric',
+                'email' => 'required|numeric',
                 ]);
             appointment::create([
-                'patient_id'         => $this->patient,
-                'nurse_id'           => $this->nurse,
-                'doctor_id'         => $this->doctor,
+                'company_id'         => $this->company,
+                'user_id'           => $this->users,
                 'intime ' => $this->start_timeee,
                 'outtime ' => $this->endtime,
             ]);
             //unset variables
-            $this->patient="";
-            $this->doctor="";
-            $this->nurse="";
+            $this->user="";
+            $this->comapny="";
+            $this->station="";
             $this->start_timeee="";
             $this->endtime="";
             session()->flash('message', 'Appointment Created successfully.');
@@ -56,10 +51,8 @@ class Appiontment extends Component
     {
         $appointment = appointment::findOrFail($id);
         $this->edit_appointment_id = $id;
-
-        $this->patient = $appointment->patient_id;
-        $this->doctor = $appointment->doctor_id;
-        $this->nurse = $appointment->nurse_id;
+        $this->user = $appointment->user_id;
+        $this->station = $appointment->station_id;
         $this->start_timeee = $appointment->intime;
         $this->endtime = $appointment->outtime;
 
@@ -68,23 +61,23 @@ class Appiontment extends Component
     public function update($id)
     {
         $this->validate([
-                'patient' => 'required|numeric',
-                'doctor' => 'required|numeric',
-                'nurse' => 'required|numeric',
+                'user' => 'required|numeric',
+                'comapny' => 'required|numeric',
+                'station' => 'required|numeric',
             ]);
 
         $appointment = appointment::findOrFail($id);
-        $appointment->patient_id = $this->patient;
-        $appointment->doctor_id = $this->doctor;
-        $appointment->nurse_id = $this->nurse;
+        $appointment->user_id = $this->user;
+        $appointment->comapny_id = $this->comapny;
+        $appointment->station_id = $this->station;
         $appointment->intime = $this->start_timeee;
         $appointment->outtime = $this->endtime;
 
         $appointment->save();
 
-        $this->patient="";
-        $this->doctor="";
-        $this->nurse="";
+        $this->user="";
+        $this->comapny="";
+        $this->station="";
         $this->start_timeee="";
         $this->endtime="";
 
